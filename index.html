@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taqueria Mi Pueblito | Authentic Mexican Food in South Houston</title>
+  <meta name="description" content="Taqueria Mi Pueblito demo website concept. Mexican food, tacos, specials, location, hours and contact information in South Houston, Texas." />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff7e6;
+      color: #1f1712;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .topbar {
+      background: #15100d;
+      color: #ffe9b3;
+      padding: 9px 20px;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 247, 230, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(31, 23, 18, 0.12);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 150px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #b21e18;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: #b21e18;
+      color: white;
+      box-shadow: 0 12px 30px rgba(178, 30, 24, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #8e1813;
+    }
+
+    .btn-dark {
+      background: #1f1712;
+      color: white;
+    }
+
+    .btn-gold {
+      background: #f4c35d;
+      color: #1f1712;
+      box-shadow: 0 12px 30px rgba(244, 195, 93, 0.25);
+    }
+
+    .btn-light {
+      background: white;
+      color: #1f1712;
+      border: 1px solid rgba(31, 23, 18, 0.12);
+    }
+
+    .hero {
+      min-height: 720px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(18, 12, 8, 0.88), rgba(18, 12, 8, 0.42)),
+        url('images/im5.png') center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 1180px;
+      width: 100%;
+      padding: 90px 20px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #f4c35d;
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 8vw, 88px);
+      line-height: 0.92;
+      letter-spacing: -4px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      background: rgba(255, 247, 230, 0.96);
+      color: #1f1712;
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(244, 195, 93, 0.55);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 22px;
+      margin-bottom: 20px;
+    }
+
+    .hero-card h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .hero-card .deal {
+      background: #b21e18;
+      color: white;
+      border-radius: 22px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
+    .hero-card .deal strong {
+      font-size: 26px;
+      display: block;
+    }
+
+    section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 0.95;
+      letter-spacing: -2px;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      color: #6d5146;
+      font-size: 17px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card, .menu-card, .contact-card, .special-card, .review-card {
+      background: white;
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 15px 45px rgba(31, 23, 18, 0.08);
+      border: 1px solid rgba(31, 23, 18, 0.08);
+    }
+
+    .feature-card .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: #ffe4aa;
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: #6d5146;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .menu-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .menu-card img {
+      height: 215px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .menu-body {
+      padding: 22px;
+    }
+
+    .menu-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .price {
+      color: #b21e18;
+    }
+
+    .menu-body p {
+      color: #6d5146;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      background: #fff0d6;
+      color: #8e1813;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .specials {
+      background: #1f1712;
+      color: white;
+    }
+
+    .specials .section-head p {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .special-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .special-card {
+      background: #fff7e6;
+      color: #1f1712;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .special-card.big {
+      background:
+        linear-gradient(90deg, rgba(178, 30, 24, 0.88), rgba(178, 30, 24, 0.52)),
+        url('images/im7.png') center/cover;
+      color: white;
+    }
+
+    .special-card h3 {
+      font-size: 34px;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+
+    .special-card p {
+      color: inherit;
+      opacity: 0.9;
+      font-size: 17px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 1fr;
+      gap: 14px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: 0 15px 45px rgba(31, 23, 18, 0.08);
+    }
+
+    .gallery-grid img:nth-child(1) {
+      height: 540px;
+      grid-row: span 2;
+    }
+
+    .reviews {
+      background: #fff0d6;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .stars {
+      color: #f4b400;
+      font-size: 22px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .review-card p {
+      color: #5f473d;
+      margin-bottom: 14px;
+    }
+
+    .location-wrap {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-card h3 {
+      font-size: 30px;
+      margin-bottom: 14px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 18px;
+      background: #fff7e6;
+    }
+
+    .map {
+      min-height: 455px;
+      border: 0;
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 15px 45px rgba(31, 23, 18, 0.08);
+    }
+
+    footer {
+      background: #15100d;
+      color: #fff7e6;
+      padding: 34px 20px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner img {
+      width: 120px;
+      height: auto;
+    }
+
+    .floating-order {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 80;
+      display: none;
+    }
+
+    .demo-mark {
+      opacity: 0.75;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .brand img {
+        width: 125px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content,
+      .special-grid,
+      .location-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .features,
+      .menu-grid,
+      .gallery-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 14px;
+      }
+
+      .gallery-grid img,
+      .gallery-grid img:nth-child(1) {
+        height: 260px;
+        grid-row: auto;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 70px 18px;
+      }
+
+      .floating-order {
+        display: inline-flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Open daily • 7:00 AM – 10:00 PM • Authentic Mexican Food in South Houston</div>
+
+  <header>
+    <nav class="nav">
+      <a href="#home" class="brand" aria-label="Taqueria Mi Pueblito Home">
+        <img src="images/logo.png" alt="Taqueria Mi Pueblito logo" />
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#specials">Specials</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="tel:+18327670459" class="btn btn-primary">Call Now</a>
+      </div>
+      <a href="tel:+18327670459" class="btn btn-dark">Call</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div>
+          <div class="eyebrow">Taqueria • Mexican Restaurant • South Houston</div>
+          <h1>Authentic Mexican flavor, made fresh daily.</h1>
+          <p>Welcome to Taqueria Mi Pueblito — a local Mexican restaurant serving tacos, plates, fresh drinks and homestyle favorites in South Houston, Texas.</p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-primary">View Menu</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=502+S+Allen-Genoa+Rd+South+Houston+TX+77587" target="_blank" class="btn btn-gold">Get Directions</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="images/im4.png" alt="Tacos from Taqueria Mi Pueblito" />
+          <h3>Fresh tacos, plates & Mexican favorites</h3>
+          <p>Stop by for dine-in or call ahead for takeout. Family-friendly, casual and full of flavor.</p>
+          <div class="deal">
+            <span>Call to order</span>
+            <strong>(832) 767-0459</strong>
+            <small>Open 7:00 AM – 10:00 PM</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>A local taqueria with real Mexican taste.</h2>
+          <p>This demo website concept gives Taqueria Mi Pueblito a cleaner mobile-friendly online presence with menu highlights, location, photos and contact buttons.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature-card">
+            <div class="icon">🌮</div>
+            <h3>Mexican Favorites</h3>
+            <p>Tacos, grilled plates, rice, beans, fresh toppings and homestyle dishes.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">⭐</div>
+            <h3>Local Favorite</h3>
+            <p>Rated 4.3 stars online with hundreds of customer opinions.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📍</div>
+            <h3>Easy to Find</h3>
+            <p>Located at 502 S Allen-Genoa Rd, South Houston, TX 77587.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="container">
+        <div class="section-head">
+          <h2>Menu Highlights</h2>
+          <p>Real menu items can be added here with exact prices, combos, kids menu, specials and online ordering links.</p>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <img src="images/im4.png" alt="Street tacos" />
+            <div class="menu-body">
+              <div class="menu-title"><span>Street Tacos</span><span class="price">Fresh</span></div>
+              <p>Classic tacos with fresh toppings, salsa and homestyle flavor.</p>
+              <span class="tag">Popular</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="images/im6.png" alt="Tostadas with avocado" />
+            <div class="menu-body">
+              <div class="menu-title"><span>Tostadas</span><span class="price">Crispy</span></div>
+              <p>Crispy tostadas topped with fresh ingredients, avocado, lime and salsa.</p>
+              <span class="tag">Fresh Choice</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="images/im7.png" alt="Loaded tacos plate" />
+            <div class="menu-body">
+              <div class="menu-title"><span>Loaded Taco Plate</span><span class="price">Flavor</span></div>
+              <p>A full plate with tacos, rice, onions, cilantro and house-style toppings.</p>
+              <span class="tag">Customer Favorite</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="images/im1.png" alt="Mexican food plates and drinks" />
+            <div class="menu-body">
+              <div class="menu-title"><span>Mexican Plates</span><span class="price">Homestyle</span></div>
+              <p>Grilled meats, rice, beans, tortillas and classic sides.</p>
+              <span class="tag">Dine In</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="images/im3.png" alt="Restaurant interior" />
+            <div class="menu-body">
+              <div class="menu-title"><span>Dine-In</span><span class="price">Casual</span></div>
+              <p>Comfortable local spot for breakfast, lunch, dinner and family meals.</p>
+              <span class="tag">Family Friendly</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="images/im5.png" alt="Taqueria storefront" />
+            <div class="menu-body">
+              <div class="menu-title"><span>Takeout</span><span class="price">Call Ahead</span></div>
+              <p>Call ahead and pick up your order fresh from the restaurant.</p>
+              <span class="tag">Fast Pickup</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="specials" id="specials">
+      <div class="container">
+        <div class="section-head">
+          <h2>Specials & Favorites</h2>
+          <p>This section can promote daily specials, breakfast plates, happy hour, kids menu or featured dishes.</p>
+        </div>
+
+        <div class="special-grid">
+          <div class="special-card big">
+            <div>
+              <h3>Taco Plates & Mexican Favorites</h3>
+              <p>Perfect for highlighting the restaurant’s best-selling plates and weekly promotions.</p>
+            </div>
+            <a href="tel:+18327670459" class="btn btn-light">Call to Order</a>
+          </div>
+
+          <div class="special-card">
+            <div>
+              <h3>Open Daily</h3>
+              <p>Breakfast, lunch and dinner options available every day.</p>
+            </div>
+            <strong style="font-size: 32px; color:#b21e18;">7AM – 10PM</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <h2>Gallery</h2>
+          <p>Real photos from the restaurant help customers recognize the place and see what kind of food they can expect.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="images/im2.png" alt="Taqueria Mi Pueblito exterior" />
+          <img src="images/im3.png" alt="Taqueria Mi Pueblito interior" />
+          <img src="images/im4.png" alt="Tacos" />
+          <img src="images/im6.png" alt="Tostadas" />
+          <img src="images/im7.png" alt="Taco plate" />
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why customers stop by</h2>
+          <p>Review cards can later be replaced with real Google reviews or customer quotes.</p>
+        </div>
+
+        <div class="review-grid">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Fresh food, casual atmosphere and the kind of local flavor people look for in a taqueria.</p>
+            <strong>Local Customer</strong>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Great spot for tacos, plates and quick takeout in South Houston.</p>
+            <strong>South Houston Guest</strong>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★☆</div>
+            <p>Easy to find, open daily and good for family meals or lunch breaks.</p>
+            <strong>Nearby Customer</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="location">
+      <div class="container">
+        <div class="section-head">
+          <h2>Visit Taqueria Mi Pueblito</h2>
+          <p>Customers can call, get directions, check hours and find the restaurant quickly from their phone.</p>
+        </div>
+
+        <div class="location-wrap">
+          <div class="contact-card" id="contact">
+            <h3>Taqueria Mi Pueblito</h3>
+            <p>Authentic Mexican restaurant located in South Houston, Texas.</p>
+
+            <div class="info-list">
+              <div class="info-item">
+                <strong>📍</strong>
+                <div>
+                  <strong>Address</strong><br />
+                  502 S Allen-Genoa Rd, South Houston, TX 77587
+                </div>
+              </div>
+              <div class="info-item">
+                <strong>⏰</strong>
+                <div>
+                  <strong>Hours</strong><br />
+                  Open daily: 7:00 AM – 10:00 PM
+                </div>
+              </div>
+              <div class="info-item">
+                <strong>☎️</strong>
+                <div>
+                  <strong>Phone</strong><br />
+                  (832) 767-0459
+                </div>
+              </div>
+              <div class="info-item">
+                <strong>⭐</strong>
+                <div>
+                  <strong>Online Rating</strong><br />
+                  4.3 stars • hundreds of opinions online
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="tel:+18327670459" class="btn btn-primary">Call Now</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=502+S+Allen-Genoa+Rd+South+Houston+TX+77587" target="_blank" class="btn btn-dark">Get Directions</a>
+            </div>
+          </div>
+
+          <iframe
+            class="map"
+            title="Taqueria Mi Pueblito Google Map"
+            src="https://www.google.com/maps?q=502%20S%20Allen-Genoa%20Rd%2C%20South%20Houston%2C%20TX%2077587&output=embed"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="tel:+18327670459" class="btn btn-primary floating-order">Call / Order</a>
+
+  <footer>
+    <div class="footer-inner">
+      <img src="images/logo.png" alt="Taqueria Mi Pueblito logo" />
+      <span>Taqueria Mi Pueblito • South Houston, TX</span>
+      <span class="demo-mark">Demo website concept by MBA Webs</span>
+    </div>
+  </footer>
+</body>
+</html>
